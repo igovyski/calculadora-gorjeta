@@ -25,6 +25,21 @@ export default function Calculadora(){
         return setPorcentagem(Number(event.target.value))
     }
 
+    function handleLimpar() {
+        setConta = 0
+        setPessoas = 0
+        setPorcentagem = 0
+    }
+
+    let gorjeta = 0
+    let total = 0
+
+    if (conta !== 0 && pessoas !== 0 && porcentagem !== 0) {
+        gorjeta = conta * porcentagem / 100 / pessoas
+        total = conta / pessoas + gorjeta
+
+    }
+
     return(
         <main>
             <form action="">
@@ -58,12 +73,12 @@ export default function Calculadora(){
                 <div className="tip-amount">
                     <p>Gorjeta</p><br />
                     <span>/ pessoa</span>
-                    <p>R$ 0.00</p>
+                    <p>R$ {gorjeta.toFixed(2)}</p>
                 </div>
                 <div className="total">
                     <p>Total</p><br />
                     <span>/ pessoa</span>
-                    <p>R$ 0.00</p>
+                    <p>R$ {total.toFixed(2)}</p>
                 </div>
                 <button>Limpar</button>
             </section>
