@@ -62,7 +62,6 @@ label {
     border: 0;
     outline: 0;
     text-align: center;
-    border-radius: 5px;
 }
 
 .tip-percentage #custom::placeholder {
@@ -74,6 +73,9 @@ label {
     padding: 2.375rem 1.5rem;
     border-radius: 15px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .total,
@@ -107,6 +109,12 @@ label {
     color: #00474b;
     text-transform: uppercase;
     margin-top: 0.75rem;
+}
+
+.results button:hover,
+.tip-percentage input[type=button]:hover {
+    background: #9fe8df;
+    cursor: pointer;
 }
 
 @media(min-width: 950px){
